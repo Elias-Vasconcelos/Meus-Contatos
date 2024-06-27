@@ -1,17 +1,21 @@
+import Contato from '../../modules/Contato'
 import * as S from './styles'
 
-const CardContato = () => {
+type Props = Contato
+const CardContato = ({ Nome, Email, Numero, Filiacao}: Props  ) => {
+
   return (
     <>
       <S.Card>
         <div>
           <S.Userimg />
-          <S.Descricao>Elias Ferreira</S.Descricao>
+          <S.Descricao nome={Nome} > {Nome} </S.Descricao>
+          <S.Descricao Filiacao={Filiacao}>{Filiacao}</S.Descricao>
         </div>
         <S.reparticao>
           <S.Usercontact>
-            <S.Descricao>Eliasferreira@asdada</S.Descricao>
-            <S.Descricao>119200000389</S.Descricao>
+            <S.Descricao Email={Email}>{Email}</S.Descricao>
+            <S.Descricao Numero={Numero} >{Numero}</S.Descricao>
           </S.Usercontact>
           <S.BtnContainer>
             <S.FrontBTN>Remover Tarefa</S.FrontBTN>
@@ -29,8 +33,8 @@ const CardContato = () => {
             <S.Userinformations />
           </S.Usercontact>
           <S.BtnContainer>
-            <S.backtBTN>Cancelar alteração</S.backtBTN>
-            <S.backtBTN>Salvar alteração</S.backtBTN>
+            <S.backtBTN>Cancelar alteracao</S.backtBTN>
+            <S.backtBTN>Salvar alteracao</S.backtBTN>
           </S.BtnContainer>
         </S.reparticao>
       </S.Card>
