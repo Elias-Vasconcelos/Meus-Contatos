@@ -2,11 +2,12 @@ import { useSelector } from 'react-redux'
 
 import CardContato from '../../components/card'
 import { RootReducer } from '../../Store'
+import { MainContainer } from '../../styles'
 
 const ListaContatos = () => {
   const { item } = useSelector((state: RootReducer) => state.Contatos )
   return (
-    <>
+    <MainContainer>
     <ul>
       {item.map((c) => (
       <li key={c.id} >
@@ -19,7 +20,7 @@ const ListaContatos = () => {
       </li>
     ))}
     </ul>
-    </>
+    </MainContainer>
   )
 }
 

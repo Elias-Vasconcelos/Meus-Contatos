@@ -17,4 +17,9 @@ export const Container = styled.div`
   max-width: 1080px;
   width: 100%;
 `
+export const MainContainer = styled.main`
+  padding: 0 40px;
+  height: 100vh;
+  overflow-y: scroll;
+`
 export default EstiloGlobal
