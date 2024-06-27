@@ -5,20 +5,21 @@ import * as S from './styles'
 import { setNome, setEmail, setNumero } from '../../Store/reducers/Contatos'
 
 type Props = Contato
-const CardContato = ({ Nome, Email, Numero, Filiacao}: Props  ) => {
-  const Dispach = useDispatch()
+
+const CardContato = ({ Nome, Email, Numero, Filiacao, id }: Props) => {
+  const dispatch = useDispatch()
   return (
     <>
       <S.Card>
         <div>
           <S.Userimg />
-          <S.Descricao nome={Nome} > {Nome} </S.Descricao>
-          <S.Descricao Filiacao={Filiacao}>{Filiacao}</S.Descricao>
+          <S.Descricao style={{ width: 100 }}> {Nome} </S.Descricao>
+          <S.Descricao style={{ width: 100 }}>{Filiacao}</S.Descricao>
         </div>
         <S.reparticao>
           <S.Usercontact>
-            <S.Descricao Email={Email}>{Email}</S.Descricao>
-            <S.Descricao Numero={Numero} >{Numero}</S.Descricao>
+            <S.Descricao> {Email} </S.Descricao>
+            <S.Descricao>{Numero}</S.Descricao>
           </S.Usercontact>
           <S.BtnContainer>
             <S.FrontBTN>Remover Tarefa</S.FrontBTN>
@@ -31,9 +32,28 @@ const CardContato = ({ Nome, Email, Numero, Filiacao}: Props  ) => {
         <S.Userimg />
         <S.reparticao>
           <S.Usercontact>
-            <S.Userinformations placeholder='Nome Completo' onChange={(evento) => Dispach(setNome(evento.target.value))} />
-            <S.Userinformations placeholder='Email' onChange={(evento) => Dispach(setEmail(evento.target.value))} />
-            <S.Userinformations placeholder='Numero de telefone' onChange={(evento) => Dispach(setNumero(evento.target.value))} />
+            <S.Userinformations
+              type="text"
+              placeholder="Nome Completo"
+              onBlur={(evento) =>
+                dispatch(setNome({ id, nome: evento.target.value }))
+              }
+            />
+            <S.Userinformations
+              placeholder="Email"
+              onChange={(evento) =>
+                dispatch(setEmail({ id, email: evento.target.value }))
+              }
+            />
+            <S.Userinformations
+              type="number"
+              placeholder="Numero de telefone"
+              onChange={(evento) =>
+                dispatch(
+                  setNumero({ id, numero: parseFloat(evento.target.value) })
+                )
+              }
+            />
           </S.Usercontact>
           <S.BtnContainer>
             <S.backtBTN>Cancelar alteracao</S.backtBTN>

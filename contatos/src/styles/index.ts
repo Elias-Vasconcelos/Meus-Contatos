@@ -3,13 +3,15 @@ import variaveis from './variaveis'
 
 const EstiloGlobal = createGlobalStyle`
   *{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-family: Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  list-style: none;
 }
   body{
   background-color: ${variaveis.corFundobody} ;
+    height: 80vh;
   }
 `
 export const Container = styled.div`
@@ -19,7 +21,9 @@ export const Container = styled.div`
 `
 export const MainContainer = styled.main`
   padding: 0 40px;
-  height: 100vh;
+  height: 70vh;
   overflow-y: scroll;
+  display: flex;
+  justify-content: center;
 `
 export default EstiloGlobal

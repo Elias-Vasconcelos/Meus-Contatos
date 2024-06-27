@@ -41,14 +41,34 @@ const contatosSlice = createSlice({
         ...state.item.filter((contato) => contato.id !== action.payload)
       ]
     },
-    setEmail: (state, action: PayloadAction<string>) => {
-      state.item.Email = action.payload
+    setEmail: (state, action: PayloadAction<{ id: number; email: string }>) => {
+      const email = state.item.find(
+        (contato) => contato.id === action.payload.id
+      )
+      if (email) {
+        email.Email.length < 4
+          ? (email.Email = action.payload.email)
+          : alert('Verifique o e mail digitado')
+      }
     },
-    setNumero: (state, action: PayloadAction<string>) => {
-      state.item.Email = action.payload
+    setNumero: (
+      state,
+      action: PayloadAction<{ id: number; numero: number }>
+    ) => {
+      const numero = state.item.find(
+        (contato) => contato.id === action.payload.id
+      )
+      if (numero) {
+        numero.Numero = action.payload.numero
+      }
     },
-    setNome: (state, action: PayloadAction<string>) => {
-      state.item.Nome = action.payload
+    setNome: (state, action: PayloadAction<{ id: number; nome: string }>) => {
+      const nome = state.item.find(
+        (contato) => contato.id === action.payload.id
+      )
+      if (nome) {
+        nome.Nome = action.payload.nome
+      }
     }
   }
 })

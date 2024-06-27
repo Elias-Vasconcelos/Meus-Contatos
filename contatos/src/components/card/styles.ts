@@ -11,6 +11,7 @@ export const Card = styled.div`
   width: 624px;
   height: 216px;
   justify-content: center;
+  align-items: center;
 `
 export const Userimg = styled.img`
   margin-top: 15px;
@@ -36,6 +37,7 @@ export const Usercontact = styled.div`
 export const Descricao = styled.p`
   font-size: 16px;
   margin-bottom: 16px;
+  text-align: center;
 `
 export const Userinformations = styled.input`
   width: 100%;
@@ -44,6 +46,7 @@ export const Userinformations = styled.input`
   border: 2px solid ${variaveis.corTemaContato};
   margin-bottom: 5px;
   height: 20px;
+  text-align: center;
 `
 
 export const BtnContainer = styled.div`
@@ -64,6 +67,7 @@ export const FrontBTN = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `
 export const backtBTN = styled.div`
   width: 160px;
@@ -77,4 +81,5 @@ export const backtBTN = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `
