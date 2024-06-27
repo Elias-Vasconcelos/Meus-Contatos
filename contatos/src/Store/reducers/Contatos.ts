@@ -40,9 +40,18 @@ const contatosSlice = createSlice({
       state.item = [
         ...state.item.filter((contato) => contato.id !== action.payload)
       ]
+    },
+    setEmail: (state, action: PayloadAction<string>) => {
+      state.item.Email = action.payload
+    },
+    setNumero: (state, action: PayloadAction<string>) => {
+      state.item.Email = action.payload
+    },
+    setNome: (state, action: PayloadAction<string>) => {
+      state.item.Nome = action.payload
     }
   }
 })
 
-export const { remover } = contatosSlice.actions
+export const { remover, setEmail, setNumero, setNome } = contatosSlice.actions
 export default contatosSlice

@@ -1,9 +1,12 @@
+import { useDispatch } from 'react-redux'
+
 import Contato from '../../modules/Contato'
 import * as S from './styles'
+import { setNome, setEmail, setNumero } from '../../Store/reducers/Contatos'
 
 type Props = Contato
 const CardContato = ({ Nome, Email, Numero, Filiacao}: Props  ) => {
-
+  const Dispach = useDispatch()
   return (
     <>
       <S.Card>
@@ -28,9 +31,9 @@ const CardContato = ({ Nome, Email, Numero, Filiacao}: Props  ) => {
         <S.Userimg />
         <S.reparticao>
           <S.Usercontact>
-            <S.Userinformations />
-            <S.Userinformations />
-            <S.Userinformations />
+            <S.Userinformations placeholder='Nome Completo' onChange={(evento) => Dispach(setNome(evento.target.value))} />
+            <S.Userinformations placeholder='Email' onChange={(evento) => Dispach(setEmail(evento.target.value))} />
+            <S.Userinformations placeholder='Numero de telefone' onChange={(evento) => Dispach(setNumero(evento.target.value))} />
           </S.Usercontact>
           <S.BtnContainer>
             <S.backtBTN>Cancelar alteracao</S.backtBTN>
