@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux'
 
 import CardContato from '../../components/card'
 import { RootReducer } from '../../Store'
@@ -8,7 +7,6 @@ import { MainContainer } from '../../styles'
 const ListaContatos = () => {
   const { item } = useSelector((state: RootReducer) => state.Contatos)
   const { termo } = useSelector((state: RootReducer) => state.Filtro)
-  const dispatch = useDispatch()
 
   const FiltraContato = () => {
     const ContatosFiltrados = item
@@ -16,6 +14,9 @@ const ListaContatos = () => {
       ContatosFiltrados = ContatosFiltrados.filter(
         (item) => item.Nome.toLowerCase().search(termo.toLowerCase()) >= 0
       )
+
+      
+
       return ContatosFiltrados
     } else {
       return item

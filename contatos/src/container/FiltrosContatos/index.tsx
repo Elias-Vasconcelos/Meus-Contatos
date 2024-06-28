@@ -1,9 +1,7 @@
-import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 
 import FiltroCard from '../../components/filtro'
 import { Buscador, Container, Formulario } from './styles'
-import { RootReducer } from '../../Store'
 
 const FiltrosContatos = () => {
   const dispatch = useDispatch()
