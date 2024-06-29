@@ -32,10 +32,10 @@ const CadastraTarefas = (evento: FormEvent) => {
          <Formulario>
          <Titulo>Tipo de contato:</Titulo>
           <div>
-            <Seletor ativo={SetSeletor} onClick={(evento) => setuserFiliacao(enums.Filiacao.Trabalho)} >Trabalho</Seletor>ativo={} 
-            <Seletor ativo={SetSeletor} onClick={(evento) => setuserFiliacao(enums.Filiacao.Comercial)} >Comercial</Seletor>ativo={} 
-            <Seletor ativo={SetSeletor} onClick={(evento) => setuserFiliacao(enums.Filiacao.Familiar)} >Familiar</Seletor>ativo={} 
-            <Seletor ativo={SetSeletor} onClick={(evento) => setuserFiliacao(enums.Filiacao.Amigos)} >Amigos</Seletor>
+            <Seletor ativo={userFiliacao === enums.Filiacao.Trabalho} onClick={(evento) => setuserFiliacao(enums.Filiacao.Trabalho)} >Trabalho</Seletor>
+            <Seletor ativo={userFiliacao === enums.Filiacao.Comercial} onClick={(evento) => setuserFiliacao(enums.Filiacao.Comercial)} >Comercial</Seletor>
+            <Seletor ativo={userFiliacao === enums.Filiacao.Familiar} onClick={(evento) => setuserFiliacao(enums.Filiacao.Familiar)} >Familiar</Seletor>
+            <Seletor ativo={userFiliacao === enums.Filiacao.Amigos} onClick={(evento) => setuserFiliacao(enums.Filiacao.Amigos)} >Amigos</Seletor>
           </div>
          </Formulario>
         </ContainerB>

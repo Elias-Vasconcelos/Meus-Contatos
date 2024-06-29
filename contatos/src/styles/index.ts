@@ -1,8 +1,11 @@
 import styled, { createGlobalStyle } from 'styled-components'
+
 import variaveis from './variaveis'
+import * as enums from '../utis/enums/index'
 
 type props = {
   ativo?: boolean
+  valor?: enums.Filiacao
 }
 
 const EstiloGlobal = createGlobalStyle`
