@@ -1,6 +1,10 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import variaveis from './variaveis'
 
+type props = {
+  ativo?: boolean
+}
+
 const EstiloGlobal = createGlobalStyle`
   *{
   margin: 0;
@@ -26,4 +30,19 @@ export const MainContainer = styled.main`
   display: flex;
   justify-content: center;
 `
+export const Titulo = styled.h2`
+  width: 296px;
+  height: 56px;
+  color: black;
+  font-size: 40px;
+`
+export const Seletor = styled.span<props>`
+ width: 128px;
+ height: 40px;
+ text-align: center;
+ border-radius: 16px;
+ border: 1px solid ${props.ativo? variaveis.corTemaContato : whith }
+ color: ${props.ativo? variaveis.corTemaContato : black }
+`
+
 export default EstiloGlobal
