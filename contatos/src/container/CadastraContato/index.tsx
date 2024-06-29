@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react'
 
-import { ContainerB, Formulario } from './styles'
+import { ContainerB, ConteinetSeletores, Formulario } from './styles'
 import { Seletor, Titulo } from '../../styles'
 import * as enums from '../../utis/enums/index'
 
@@ -11,6 +11,7 @@ const CadastraTarefas = (evento: FormEvent) => {
     const [ userEmail, setuserEmail ] = useState('')
     const [ userNumber, setuserNumber ] = useState(0)
     const [ userFiliacao, setuserFiliacao ] = useState(enums.Filiacao)
+    const [ userGenero, setuserGenero ] = useState(enums.Filiacao)
     
     return (
         < ContainerB >
@@ -31,12 +32,18 @@ const CadastraTarefas = (evento: FormEvent) => {
          </Formulario>
          <Formulario>
          <Titulo>Tipo de contato:</Titulo>
-          <div>
+          <ConteinetSeletores>
             <Seletor ativo={userFiliacao === enums.Filiacao.Trabalho} onClick={(evento) => setuserFiliacao(enums.Filiacao.Trabalho)} >Trabalho</Seletor>
             <Seletor ativo={userFiliacao === enums.Filiacao.Comercial} onClick={(evento) => setuserFiliacao(enums.Filiacao.Comercial)} >Comercial</Seletor>
             <Seletor ativo={userFiliacao === enums.Filiacao.Familiar} onClick={(evento) => setuserFiliacao(enums.Filiacao.Familiar)} >Familiar</Seletor>
             <Seletor ativo={userFiliacao === enums.Filiacao.Amigos} onClick={(evento) => setuserFiliacao(enums.Filiacao.Amigos)} >Amigos</Seletor>
-          </div>
+          </ConteinetSeletores>
+            <Titulo style={{FontSize: 14 }}>Genero:</Titulo>
+          <ConteinetSeletores>
+            <Seletor onClick={setuserGenero} ativo={} >Masculino</Seletor>
+            <Seletor onClick={setuserGenero} ativo={} >Masculino</Seletor>
+            <Seletor  >Femenino</Seletor>
+          </ConteinetSeletores>
          </Formulario>
         </ContainerB>
     )

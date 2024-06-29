@@ -4,3 +4,7 @@ export enum Filiacao {
   Trabalho = 'Trabalho',
   Comercial = 'Comercial'
 }
+
+export enum Genero {
+
+}

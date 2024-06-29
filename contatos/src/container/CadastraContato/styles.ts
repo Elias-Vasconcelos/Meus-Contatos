@@ -25,3 +25,8 @@ export const Formulario = styled.form`
   font-size: 18px;
  }
 `
+export const ConteinetSeletores = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  column-gap: 12px;
+`

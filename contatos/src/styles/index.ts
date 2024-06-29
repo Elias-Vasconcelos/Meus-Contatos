@@ -5,7 +5,6 @@ import * as enums from '../utis/enums/index'
 
 type props = {
   ativo?: boolean
-  valor?: enums.Filiacao
 }
 
 const EstiloGlobal = createGlobalStyle`
