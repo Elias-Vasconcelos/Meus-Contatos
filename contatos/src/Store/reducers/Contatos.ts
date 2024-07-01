@@ -13,6 +13,7 @@ const initialState: ContatoState = {
       Email: 'EliasFerreira@gmail.com',
       Numero: 11920000389,
       Filiacao: enums.Filiacao.Amigos,
+      Genero: enums.Genero.Masculino,
       id: 1
     },
     {
@@ -20,6 +21,7 @@ const initialState: ContatoState = {
       Email: 'iVASCONCELOS@gmail.com',
       Numero: 119209999999,
       Filiacao: enums.Filiacao.Familiar,
+      Genero: enums.Genero.Femenino,
       id: 2
     },
     {
@@ -27,6 +29,7 @@ const initialState: ContatoState = {
       Email: 'Ana@gmail.com',
       Numero: 119209999999,
       Filiacao: enums.Filiacao.Familiar,
+      Genero: enums.Genero.Femenino,
       id: 3
     }
   ]
