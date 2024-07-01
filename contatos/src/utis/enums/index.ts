@@ -5,6 +5,4 @@ export enum Filiacao {
   Comercial = 'Comercial'
 }
 
-export enum Genero {
-
-}
+export enum Genero {}

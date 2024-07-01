@@ -43,8 +43,8 @@ export const Seletor = styled.span<props>`
  height: 40px;
  text-align: center;
  border-radius: 16px;
- border: 1px solid ${props.ativo? variaveis.corTemaContato : whith }
- color: ${props.ativo? variaveis.corTemaContato : black }
+ border: 1px solid ${props.ativo ? variaveis.corTemaContato : whith}
+ color: ${props.ativo ? variaveis.corTemaContato : black}
 `
 
 export default EstiloGlobal

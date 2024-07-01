@@ -10,12 +10,10 @@ const ListaContatos = () => {
 
   const FiltraContato = () => {
     const ContatosFiltrados = item
-    if(termo){
+    if (termo) {
       ContatosFiltrados = ContatosFiltrados.filter(
         (item) => item.Nome.toLowerCase().search(termo.toLowerCase()) >= 0
       )
-
-      
 
       return ContatosFiltrados
     } else {

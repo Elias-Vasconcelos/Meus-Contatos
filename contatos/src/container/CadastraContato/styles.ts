@@ -8,22 +8,22 @@ export const ContainerB = styled.div`
   justify-content: center;
 `
 export const Formulario = styled.form`
- max-width: 962px;
- width: 100%;
- height: 328px;
+  max-width: 962px;
+  width: 100%;
+  height: 328px;
 
   label {
     font-size: 18px;
   }
 
- input {
-  width: 336px;
-  height: 50px;
-  border: none;
-  border-radius: 16px;
-  text-align: center;
-  font-size: 18px;
- }
+  input {
+    width: 336px;
+    height: 50px;
+    border: none;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 18px;
+  }
 `
 export const ConteinetSeletores = styled.div`
   display: grid;

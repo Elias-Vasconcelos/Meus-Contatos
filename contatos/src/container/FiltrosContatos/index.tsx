@@ -7,7 +7,11 @@ const FiltrosContatos = () => {
   const dispatch = useDispatch()
   return (
     <Container>
-      <Buscador type="text" placeholder="Posso ajudar?" onChange={evento => dispatch(SetTermo(evento.target.value))} />
+      <Buscador
+        type="text"
+        placeholder="Posso ajudar?"
+        onChange={(evento) => dispatch(SetTermo(evento.target.value))}
+      />
       <Formulario>
         <FiltroCard />
         <FiltroCard />
