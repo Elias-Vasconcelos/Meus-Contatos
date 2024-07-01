@@ -69,9 +69,17 @@ const contatosSlice = createSlice({
       if (nome) {
         nome.Nome = action.payload.nome
       }
+    },
+    Cadastrar: (state, action: PayloadAction<Contato>) => {
+      const ContatoJaExite = state.item.find((Contato) => Contato.Numero = action.payload.Numero)
+      if (ContatoJaExite){
+        alert('Este numero ja esta cadastrado')
+      } else {
+        state.item.push(action.payload)
+      }
     }
   }
 })
 
-export const { remover, setEmail, setNumero, setNome } = contatosSlice.actions
+export const { remover, setEmail, setNumero, setNome, Cadastrar } = contatosSlice.actions
 export default contatosSlice
