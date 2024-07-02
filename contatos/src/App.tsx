@@ -4,8 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import EstiloGlobal, { Container } from './styles'
 import store from './Store'
-import CadastraTarefas from './container/CadastraContato'
 import Home from './pages/Home'
+import Formulario from './pages/Cadastro'
 
 const rotas = createBrowserRouter([
   {
@@ -14,7 +14,7 @@ const rotas = createBrowserRouter([
   },
   {
     path: '/Formulario',
-    element: <Home />
+    element: <Formulario />
   }
 ])
 
@@ -23,6 +23,7 @@ function App() {
     <Provider store={store}>
       <EstiloGlobal />
       <Container>
+      <RouterProvider router={rotas} />
       </Container>
     </Provider>
   )
