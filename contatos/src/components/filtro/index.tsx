@@ -1,10 +1,15 @@
 import * as S from './styles'
 
-const FiltroCard = () => {
+type Props = {
+  Deescricao: string
+  Font: string
+}
+
+const FiltroCard = ( { Deescricao, Font }: Props) => {
   return (
     <S.FitroItem>
-      <S.Icon src="../../imgs/IconsFiltro/iconAmigos.png" />
-      <S.Descriçao> Trabalho </S.Descriçao>
+      <S.Icon src={Font} />
+      <S.Descricao> {Deescricao} </S.Descricao>
     </S.FitroItem>
   )
 }

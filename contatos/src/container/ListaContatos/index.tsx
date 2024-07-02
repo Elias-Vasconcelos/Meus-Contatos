@@ -15,6 +15,8 @@ const ListaContatos = () => {
         (item) => item.Nome.toLowerCase().search(termo.toLowerCase()) >= 0
       )
 
+      
+
       return ContatosFiltrados
     } else {
       return item

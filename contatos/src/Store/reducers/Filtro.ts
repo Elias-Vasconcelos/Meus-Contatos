@@ -17,9 +17,12 @@ const FiltroSlice = createSlice({
   reducers: {
     SetTermo: (state, action: PayloadAction<string>) => {
       state.termo = action.payload
+    },
+    SetTipo: (state, action: PayloadAction<'todos' | enums.Filiacao>) =>{
+      state.tipo = action.payload
     }
   }
 })
 
-export const { SetTermo } = FiltroSlice.actions
+export const { SetTermo, SetTipo } = FiltroSlice.actions
 export default FiltroSlice.reducer

@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
 
+
+
 export const FitroItem = styled.li`
   max-width: 100px;
   width: 100%;
@@ -18,7 +20,7 @@ export const Icon = styled.img`
   border-radius: 16px;
   margin: 6px 0;
 `
-export const Descriçao = styled.h3`
+export const Descricao = styled.h3`
   font-size: 16px;
   margin-bottom: 6px;
 `
