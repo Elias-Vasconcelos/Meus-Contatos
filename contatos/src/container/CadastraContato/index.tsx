@@ -12,7 +12,7 @@ import { Seletor, Titulo } from '../../styles'
 import * as enums from '../../utis/enums/index'
 import { Cadastrar } from '../../Store/reducers/Contatos'
 
-const CadastraTarefas = () => {
+const CadastraContato = () => {
   const dispatch = useDispatch()
 
   const [userName, setuserName] = useState('')
@@ -110,4 +110,4 @@ const CadastraTarefas = () => {
   )
 }
 
-export default CadastraTarefas
+export default CadastraContato
