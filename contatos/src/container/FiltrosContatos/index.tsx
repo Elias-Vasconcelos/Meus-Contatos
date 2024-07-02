@@ -14,12 +14,12 @@ const FiltrosContatos = () => {
         onChange={(evento) => dispatch(SetTermo(evento.target.value))}
       />
       <Formulario>
-        <FiltroCard Deescricao='Trabalho' Font='../../imgs/IconsFiltro/iconTrabalho.png' onClick={() => dispatch(SetTipo(enums.Filiacao.Trabalho))}/>
-        <FiltroCard Deescricao='Comercial' Font='../../imgs/IconsFiltro/iconWorker.png' onClick={() => dispatch(SetTipo(enums.Filiacao.Comercial))}/>
-        <FiltroCard Deescricao='Familia' Font='../../imgs/IconsFiltro/iconfamilia.png' onClick={() => dispatch(SetTipo(enums.Filiacao.Familiar))}/>
-        <FiltroCard Deescricao='Amigos' Font='../../imgs/IconsFiltro/iconAmigos.png' onClick={() => dispatch(SetTipo(enums.Filiacao.Amigos))}/>
-        <FiltroCard Deescricao='Todos' Font='../../imgs/IconsFiltro/conTodos.png' onClick={() => dispatch(SetTipo('Todos'))}/>
-        <FiltroCard Deescricao='Adicionar' Font='../../imgs/IconsFiltro' onClick={() => dispatch(SetTipo())}/>
+        <FiltroCard valor={enums.Filiacao.Trabalho} Deescricao='Trabalho' Font='../../imgs/IconsFiltro/iconTrabalho.png' onClick={() => dispatch(SetTipo(valor))}/>
+        <FiltroCard valor={enums.Filiacao.Comercial} Deescricao='Comercial' Font='../../imgs/IconsFiltro/iconWorker.png' onClick={() => dispatch(SetTipo(valor))}/>
+        <FiltroCard valor={enums.Filiacao.Familiar} Deescricao='Familia' Font='../../imgs/IconsFiltro/iconfamilia.png' onClick={() => dispatch(SetTipo(valor))}/>
+        <FiltroCard valor={enums.Filiacao.Amigos} Deescricao='Amigos' Font='../../imgs/IconsFiltro/iconAmigos.png' onClick={() => dispatch(SetTipo(valor))}/>
+        <FiltroCard valor={'Todos'} Deescricao='Todos' Font='../../imgs/IconsFiltro/conTodos.png' onClick={() => dispatch(SetTipo(valor))}/>
+        <FiltroCard valor={'Todos'} Deescricao='Adicionar' Font='../../imgs/IconsFiltro' onClick={() => dispatch(SetTipo(valor))}/>
       </Formulario>
     </Container>
   )

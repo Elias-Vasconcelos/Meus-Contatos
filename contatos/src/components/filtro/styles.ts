@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
 
-
-
-export const FitroItem = styled.li`
+type props = {
+  ativo: boolean
+}
+ 
+export const FitroItem = styled.li<props>`
   max-width: 100px;
   width: 100%;
   display: flex;
@@ -12,6 +14,8 @@ export const FitroItem = styled.li`
   align-items: center;
   background-color: ${variaveis.corDeFundoCard};
   border-radius: 16px;
+  border: 1px solid ${ props => props.ativo ? variaveis.corTemaContato : variaveis.corDeFundoCard };
+  color: ${ (props) => props.ativo ? variaveis.corTemaContato : 'black' };
 `
 export const Icon = styled.img`
   max-width: 64px;

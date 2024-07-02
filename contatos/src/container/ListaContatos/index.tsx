@@ -6,7 +6,7 @@ import { MainContainer } from '../../styles'
 
 const ListaContatos = () => {
   const { item } = useSelector((state: RootReducer) => state.Contatos)
-  const { termo } = useSelector((state: RootReducer) => state.Filtro)
+  const { termo, tipo } = useSelector((state: RootReducer) => state.Filtro)
 
   const FiltraContato = () => {
     let ContatosFiltrados = item
@@ -15,7 +15,9 @@ const ListaContatos = () => {
         (item) => item.Nome.toLowerCase().search(termo.toLowerCase()) >= 0
       )
 
-      
+      if(tipo !== 'todos' ) {
+        ContatosFiltrados = ContatosFiltrados.filter((contato) => contato.Filiacao === tipo )
+      }
 
       return ContatosFiltrados
     } else {
