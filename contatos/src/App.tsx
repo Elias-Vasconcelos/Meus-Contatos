@@ -1,9 +1,11 @@
 import React from 'react'
+import { Provider } from 'react-redux'
+
 import EstiloGlobal, { Container } from './styles'
 import FiltrosContatos from './container/FiltrosContatos'
 import ListaContatos from './container/ListaContatos'
-import { Provider } from 'react-redux'
 import store from './Store'
+import CadastraTarefas from './container/CadastraContato'
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
       <Container>
         <FiltrosContatos />
         <ListaContatos />
+        <CadastraTarefas />
       </Container>
     </Provider>
   )

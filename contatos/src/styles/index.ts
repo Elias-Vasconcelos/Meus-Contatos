@@ -1,10 +1,9 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
 import variaveis from './variaveis'
-import * as enums from '../utis/enums/index'
 
 type props = {
-  ativo?: boolean
+  ativo: boolean
 }
 
 const EstiloGlobal = createGlobalStyle`
@@ -36,15 +35,20 @@ export const Titulo = styled.h2`
   width: 296px;
   height: 56px;
   color: black;
-  font-size: 40px;
+  font-size: 32px;
+  text-wrap: nowrap;
 `
 export const Seletor = styled.span<props>`
- width: 128px;
- height: 40px;
- text-align: center;
- border-radius: 16px;
- border: 1px solid ${props.ativo ? variaveis.corTemaContato : whith}
- color: ${props.ativo ? variaveis.corTemaContato : black}
+  width: 128px;
+  height: 32px;
+  border-radius: 16px;
+  border: 1px solid
+    ${(props) => (props.ativo ? variaveis.corTemaContato : 'white')};
+  color: ${(props) => (props.ativo ? variaveis.corTemaContato : 'black')};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 `
 
 export default EstiloGlobal

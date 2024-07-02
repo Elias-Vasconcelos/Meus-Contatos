@@ -1,59 +1,65 @@
 import { useState, FormEvent } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { ContainerB, ConteinetSeletores, Formulario } from './styles'
+import {
+  BtnCadastrar,
+  ContainerB,
+  ContainerFormulario,
+  ConteinetSeletores,
+  Formulario
+} from './styles'
 import { Seletor, Titulo } from '../../styles'
 import * as enums from '../../utis/enums/index'
 import { Cadastrar } from '../../Store/reducers/Contatos'
 
-const CadastraTarefas = (evento: FormEvent) => {
-  evento.preventDefault()
-
+const CadastraTarefas = () => {
   const dispatch = useDispatch()
 
   const [userName, setuserName] = useState('')
   const [userEmail, setuserEmail] = useState('')
   const [userNumber, setuserNumber] = useState(0)
-  const [userFiliacao, setuserFiliacao] = useState(enums.Filiacao)
-  const [userGenero, setuserGenero] = useState('Mascolino' | 'Femenino' )
-
-  dispatch(Cadastrar({
-    userName,
-    userEmail,
-    userNumber,
-    userFiliacao,
-    id: 10
-  })
-)
+  const [userFiliacao, setuserFiliacao] = useState(enums.Filiacao.Amigos)
+  const [userGenero, setuserGenero] = useState(enums.Genero.Femenino)
+  dispatch(
+    Cadastrar({
+      Nome: userName,
+      Email: userEmail,
+      Numero: userNumber,
+      Filiacao: userFiliacao,
+      Genero: userGenero
+    })
+  )
 
   return (
     <ContainerB>
       <Formulario>
-        <Titulo>Novo contato</Titulo>
-        <div style={{ width: 600, display: 'flex', justifyContent: 'center' }}>
+        <Titulo style={{ width: 900, marginBottom: 32 }}>Novo contato</Titulo>
+        <ContainerFormulario>
           <label htmlFor="nome"> Nome Completo: </label>
           <input
             id="nome"
             type="text"
             onChange={(evento) => setuserName(evento.target.value)}
           />
-        </div>
-        <div style={{ width: 600, display: 'flex', justifyContent: 'center' }}>
+        </ContainerFormulario>
+        <ContainerFormulario>
           <label htmlFor="E-mail"> E-mail: </label>
           <input
             id="E-mail"
             type="text"
             onChange={(evento) => setuserEmail(evento.target.value)}
           />
-        </div>
-        <div style={{ width: 600, display: 'flex', justifyContent: 'center' }}>
+        </ContainerFormulario>
+        <ContainerFormulario>
           <label htmlFor="Telefone"> Telefone: </label>
           <input
             id="Telefone"
             type="number"
-            onChange={(evento) => setuserNumber(parseFloat(evento.target.value))}
+            onChange={(evento) =>
+              setuserNumber(parseFloat(evento.target.value))
+            }
           />
-        </div>
+        </ContainerFormulario>
       </Formulario>
       <Formulario>
         <Titulo>Tipo de contato:</Titulo>
@@ -83,17 +89,23 @@ const CadastraTarefas = (evento: FormEvent) => {
             Amigos
           </Seletor>
         </ConteinetSeletores>
-        <Titulo style={{ FontSize: 14 }}>Genero:</Titulo>
+        <Titulo>Genero:</Titulo>
         <ConteinetSeletores>
-          <Seletor onClick={setuserGenero( 'Mascolino' )} ativo={ userGenero === 'Mascolino'}>
+          <Seletor
+            onClick={() => setuserGenero(enums.Genero.Masculino)}
+            ativo={userGenero === enums.Genero.Masculino}
+          >
             Masculino
           </Seletor>
-          <Seletor onClick={setuserGenero( 'Femenino' )} ativo={ userGenero === 'Femenino' }>
-            Masculino
+          <Seletor
+            onClick={() => setuserGenero(enums.Genero.Femenino)}
+            ativo={userGenero === enums.Genero.Femenino}
+          >
+            Femenino
           </Seletor>
-          <Seletor>Femenino</Seletor>
         </ConteinetSeletores>
       </Formulario>
+      <BtnCadastrar>Adicionar Contato +</BtnCadastrar>
     </ContainerB>
   )
 }

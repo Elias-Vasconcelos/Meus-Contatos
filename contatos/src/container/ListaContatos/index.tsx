@@ -9,7 +9,7 @@ const ListaContatos = () => {
   const { termo } = useSelector((state: RootReducer) => state.Filtro)
 
   const FiltraContato = () => {
-    const ContatosFiltrados = item
+    let ContatosFiltrados = item
     if (termo) {
       ContatosFiltrados = ContatosFiltrados.filter(
         (item) => item.Nome.toLowerCase().search(termo.toLowerCase()) >= 0
@@ -33,6 +33,7 @@ const ListaContatos = () => {
               Filiacao={c.Filiacao}
               Nome={c.Nome}
               Numero={c.Numero}
+              Genero={c.Genero}
               id={c.id}
             />
           </li>

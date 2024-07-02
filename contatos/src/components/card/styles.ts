@@ -1,5 +1,23 @@
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 import variaveis from '../../styles/variaveis'
+
+export const Caixa = styled.div`
+  perspective: 1000px;
+`
+
+export const CardContaoner = styled.main`
+  display: flex;
+  justify-content: center;
+  transition: all 0.9s;
+  transform-style: preserve-3d;
+  margin-bottom: 200px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  &.flip {
+    transform: rotateY(180deg);
+  }
+`
 
 export const Card = styled.div`
   background-color: white;
@@ -12,7 +30,17 @@ export const Card = styled.div`
   height: 216px;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  backface-visibility: hidden;
+  &.Front {
+    transform: rotateY(0deg);
+  }
+  &.Back {
+    transform: rotateY(180deg);
+    color: red;
+  }
 `
+
 export const Userimg = styled.img`
   margin-top: 15px;
   width: 104px;

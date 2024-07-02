@@ -44,45 +44,47 @@ const contatosSlice = createSlice({
         ...state.item.filter((contato) => contato.id !== action.payload)
       ]
     },
-    setEmail: (state, action: PayloadAction<{ id: number; email: string }>) => {
-      const email = state.item.find(
-        (contato) => contato.id === action.payload.id
-      )
-      if (email) {
-        email.Email.length < 4
-          ? (email.Email = action.payload.email)
-          : alert('Verifique o e mail digitado')
-      }
-    },
-    setNumero: (
+    setContato: (
       state,
-      action: PayloadAction<{ id: number; numero: number }>
+      action: PayloadAction<{
+        id: number
+        nome: string
+        email: string
+        numero: number
+      }>
     ) => {
-      const numero = state.item.find(
+      const ContatoAlterado = state.item.find(
         (contato) => contato.id === action.payload.id
       )
-      if (numero) {
-        numero.Numero = action.payload.numero
+      if (ContatoAlterado) {
+        if (action.payload.nome.length > 3) {
+          ContatoAlterado.Nome = action.payload.nome
+        }
+        if (action.payload.email.length > 6) {
+          ContatoAlterado.Email = action.payload.email
+        }
+        if (action.payload.numero > 911111111) {
+          ContatoAlterado.Numero = action.payload.numero
+        }
       }
     },
-    setNome: (state, action: PayloadAction<{ id: number; nome: string }>) => {
-      const nome = state.item.find(
-        (contato) => contato.id === action.payload.id
+    Cadastrar: (state, action: PayloadAction<Omit<Contato, 'id'>>) => {
+      const ContatoJaExite = state.item.find(
+        (Contato) => (Contato.Numero = action.payload.Numero)
       )
-      if (nome) {
-        nome.Nome = action.payload.nome
-      }
-    },
-    Cadastrar: (state, action: PayloadAction<Contato>) => {
-      const ContatoJaExite = state.item.find((Contato) => Contato.Numero = action.payload.Numero)
-      if (ContatoJaExite){
+      if (ContatoJaExite) {
         alert('Este numero ja esta cadastrado')
       } else {
-        state.item.push(action.payload)
+        const UltimoContato = state.item[state.item.length - 1]
+        const NovoContato = {
+          ...action.payload,
+          id: UltimoContato ? UltimoContato.id + 1 : 1
+        }
+        state.item.push(NovoContato)
       }
     }
   }
 })
 
-export const { remover, setEmail, setNumero, setNome, Cadastrar } = contatosSlice.actions
+export const { remover, Cadastrar, setContato } = contatosSlice.actions
 export default contatosSlice

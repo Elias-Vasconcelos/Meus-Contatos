@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux'
 
 import FiltroCard from '../../components/filtro'
 import { Buscador, Container, Formulario } from './styles'
+import { SetTermo } from '../../Store/reducers/Filtro'
 
 const FiltrosContatos = () => {
   const dispatch = useDispatch()
