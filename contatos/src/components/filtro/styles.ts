@@ -4,7 +4,7 @@ import variaveis from '../../styles/variaveis'
 type props = {
   ativo: boolean
 }
- 
+
 export const FitroItem = styled.li<props>`
   max-width: 100px;
   width: 100%;
@@ -14,8 +14,10 @@ export const FitroItem = styled.li<props>`
   align-items: center;
   background-color: ${variaveis.corDeFundoCard};
   border-radius: 16px;
-  border: 1px solid ${ props => props.ativo ? variaveis.corTemaContato : variaveis.corDeFundoCard };
-  color: ${ (props) => props.ativo ? variaveis.corTemaContato : 'black' };
+  border: 1px solid
+    ${(props) =>
+      props.ativo ? variaveis.corTemaContato : variaveis.corDeFundoCard};
+  color: ${(props) => (props.ativo ? variaveis.corTemaContato : 'black')};
 `
 export const Icon = styled.img`
   max-width: 64px;

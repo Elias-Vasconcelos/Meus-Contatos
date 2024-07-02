@@ -18,7 +18,7 @@ const FiltroSlice = createSlice({
     SetTermo: (state, action: PayloadAction<string>) => {
       state.termo = action.payload
     },
-    SetTipo: (state, action: PayloadAction<'todos' | enums.Filiacao>) =>{
+    SetTipo: (state, action: PayloadAction<'todos' | enums.Filiacao>) => {
       state.tipo = action.payload
     }
   }

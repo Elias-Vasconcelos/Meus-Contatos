@@ -23,7 +23,7 @@ function App() {
     <Provider store={store}>
       <EstiloGlobal />
       <Container>
-      <RouterProvider router={rotas} />
+        <RouterProvider router={rotas} />
       </Container>
     </Provider>
   )

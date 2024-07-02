@@ -70,7 +70,7 @@ const contatosSlice = createSlice({
     },
     Cadastrar: (state, action: PayloadAction<Omit<Contato, 'id'>>) => {
       const ContatoJaExite = state.item.find(
-        (Contato) => (Contato.Numero = action.payload.Numero)
+        (Contato) => Contato.Numero === action.payload.Numero
       )
       if (ContatoJaExite) {
         alert('Este numero ja esta cadastrado')

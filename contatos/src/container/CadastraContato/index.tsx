@@ -112,7 +112,9 @@ const CadastraContato = () => {
           </Seletor>
         </ConteinetSeletores>
       </Formulario>
-      <BtnCadastrar onClick={cadastrarcontato} >Adicionar Contato +</BtnCadastrar>
+      <BtnCadastrar onClick={cadastrarcontato}>
+        Adicionar Contato +
+      </BtnCadastrar>
     </ContainerB>
   )
 }

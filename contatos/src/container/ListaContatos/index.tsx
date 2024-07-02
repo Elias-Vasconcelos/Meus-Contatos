@@ -15,8 +15,10 @@ const ListaContatos = () => {
         (item) => item.Nome.toLowerCase().search(termo.toLowerCase()) >= 0
       )
 
-      if(tipo !== 'todos' ) {
-        ContatosFiltrados = ContatosFiltrados.filter((contato) => contato.Filiacao === tipo )
+      if (tipo !== 'todos') {
+        ContatosFiltrados = ContatosFiltrados.filter(
+          (contato) => contato.Filiacao === tipo
+        )
       }
 
       return ContatosFiltrados
