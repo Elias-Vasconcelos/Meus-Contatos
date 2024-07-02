@@ -1,5 +1,6 @@
 import { useState, FormEvent } from 'react'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 import {
   BtnCadastrar,
@@ -20,15 +21,21 @@ const CadastraContato = () => {
   const [userNumber, setuserNumber] = useState(0)
   const [userFiliacao, setuserFiliacao] = useState(enums.Filiacao.Amigos)
   const [userGenero, setuserGenero] = useState(enums.Genero.Femenino)
-  dispatch(
-    Cadastrar({
-      Nome: userName,
-      Email: userEmail,
-      Numero: userNumber,
-      Filiacao: userFiliacao,
-      Genero: userGenero
-    })
-  )
+  const navigate = useNavigate()
+
+  const cadastrarcontato = (evento: FormEvent) => {
+    evento.preventDefault()
+    dispatch(
+      Cadastrar({
+        Nome: userName,
+        Email: userEmail,
+        Numero: userNumber,
+        Filiacao: userFiliacao,
+        Genero: userGenero
+      })
+    )
+    navigate('/')
+  }
 
   return (
     <ContainerB>
@@ -105,7 +112,7 @@ const CadastraContato = () => {
           </Seletor>
         </ConteinetSeletores>
       </Formulario>
-      <BtnCadastrar>Adicionar Contato +</BtnCadastrar>
+      <BtnCadastrar onClick={cadastrarcontato} >Adicionar Contato +</BtnCadastrar>
     </ContainerB>
   )
 }

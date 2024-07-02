@@ -5,11 +5,11 @@ import * as S from './styles'
 
 type Props = {
   Deescricao: string
-  valor: 'todos' | enums.Filiacao
+  valor?: 'todos' | enums.Filiacao
   Font: string
 }
 
-const FiltroCard = ( { Deescricao, Font }: Props) => {
+const FiltroCard = ( { Deescricao, Font, valor }: Props) => {
   const { tipo } = useSelector((state: RootReducer) => state.Filtro)
   return (
     <S.FitroItem ativo={ tipo === valor } > 
