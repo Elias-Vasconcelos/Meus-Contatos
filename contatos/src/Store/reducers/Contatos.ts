@@ -18,8 +18,8 @@ const initialState: ContatoState = {
     },
     {
       Nome: 'Ivaneide',
-      Email: 'iVASCONCELOS@gmail.com',
-      Numero: 119209999999,
+      Email: 'Ivaneide@gmail.com',
+      Numero: 1199999999,
       Filiacao: enums.Filiacao.Familiar,
       Genero: enums.Genero.Femenino,
       id: 2
@@ -27,7 +27,7 @@ const initialState: ContatoState = {
     {
       Nome: 'Ana',
       Email: 'Ana@gmail.com',
-      Numero: 119209999999,
+      Numero: 11988888888,
       Filiacao: enums.Filiacao.Familiar,
       Genero: enums.Genero.Femenino,
       id: 3
@@ -57,14 +57,20 @@ const contatosSlice = createSlice({
         (contato) => contato.id === action.payload.id
       )
       if (ContatoAlterado) {
-        if (action.payload.nome.length > 3) {
+        if (action.payload.nome.length > 5) {
           ContatoAlterado.Nome = action.payload.nome
+        } else {
+          alert('O nome Digitado Não é valido')
         }
         if (action.payload.email.length > 6) {
           ContatoAlterado.Email = action.payload.email
+        } else {
+          alert('O email Digitado Não é valido')
         }
         if (action.payload.numero > 911111111) {
           ContatoAlterado.Numero = action.payload.numero
+        } else {
+          alert('O numero Digitado Não é valido')
         }
       }
     },

@@ -16,11 +16,10 @@ const EstiloGlobal = createGlobalStyle`
 }
   body{
   background-color: ${variaveis.corFundobody} ;
-    height: 80vh;
   }
 `
 export const Container = styled.div`
-  margin: 2vh auto;
+  margin: 0 auto;
   max-width: 1080px;
   width: 100%;
 `
@@ -37,6 +36,7 @@ export const Titulo = styled.h2`
   color: black;
   font-size: 32px;
   text-wrap: nowrap;
+  text-align: center;
 `
 export const Seletor = styled.span<props>`
   width: 128px;

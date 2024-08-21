@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
+import { Titulo } from '../../styles'
 
 export const ContainerB = styled.div`
-  margin: 2vh auto;
-  max-width: 1080px;
+  margin: 0 auto;
+  max-width: 680px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -15,7 +16,23 @@ export const Formulario = styled.form`
   width: 100%;
   height: 328px;
   text-align: center;
+
+  ${Titulo} {
+    width: 100%;
+    text-align: center;
+  }
 `
+export const Content = styled.div`
+  display: flex;
+  justify-content: center;
+  background-color: #e0e0e0;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-radius: 16px;
+  padding: 32px;
+`
+
 export const ContainerFormulario = styled.div`
   width: 100%;
   display: flex;

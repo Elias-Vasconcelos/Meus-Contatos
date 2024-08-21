@@ -6,6 +6,9 @@ import Contato from '../../modules/Contato'
 import * as S from './styles'
 import * as enums from '../../utis/enums/index'
 
+import MenIcon from '../../imgs/IconsUser/UserMen.png'
+import WomanIcon from '../../imgs/IconsUser/UserWoman.png'
+
 type Props = Contato
 
 const CardContato = ({ Nome, Email, Numero, Filiacao, id, Genero }: Props) => {
@@ -36,7 +39,9 @@ const CardContato = ({ Nome, Email, Numero, Filiacao, id, Genero }: Props) => {
       <S.CardContaoner className={EstaVirado ? 'flip' : ''}>
         <S.Card className="Front">
           <div>
-            <S.Userimg />
+            <S.Userimg
+              src={Genero === enums.Genero.Masculino ? MenIcon : WomanIcon}
+            />
             <S.Descricao style={{ width: 100 }}> {Nome} </S.Descricao>
             <S.Descricao style={{ width: 100 }}>{Filiacao}</S.Descricao>
           </div>
@@ -55,11 +60,9 @@ const CardContato = ({ Nome, Email, Numero, Filiacao, id, Genero }: Props) => {
         </S.Card>
         <br />
         <S.Card className="Back">
-          {Genero === enums.Genero.Masculino ? (
-            <S.Userimg src="../../imgs/IconsUser/UserMen.png" />
-          ) : (
-            <S.Userimg src="../../imgs/IconsUser/UserWoman.png" />
-          )}
+          <S.Userimg
+            src={Genero === enums.Genero.Masculino ? MenIcon : WomanIcon}
+          />
           <S.reparticao>
             <S.Usercontact>
               <S.Userinformations
